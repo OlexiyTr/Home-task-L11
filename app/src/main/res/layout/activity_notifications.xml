@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".NotificationFromReplyActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSimpleNotification"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:text="Simple Notification"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnNotificationWithAction"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnNotificationWithAction"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:text="Notification with action"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnNotificationWithReply"
+        app:layout_constraintStart_toEndOf="@+id/btnSimpleNotification"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnNotificationWithReply"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:text="Notification with reply"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnNotificationWithProgress"
+        app:layout_constraintStart_toEndOf="@+id/btnNotificationWithAction"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnNotificationWithProgress"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:text="Notification with progress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnNotificationWithReply"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
