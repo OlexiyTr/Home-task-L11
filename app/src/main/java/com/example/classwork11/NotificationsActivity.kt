@@ -75,7 +75,7 @@ class NotificationsActivity : AppCompatActivity() {
     }
 
     private fun sendSimpleNotification() {
-        var builder = NotificationCompat.Builder(this, CHANNEL_ID)
+        val builder = NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_launcher_foreground)
             .setContentTitle("Simple notification title")
             .setContentText("Simple notification message")
@@ -97,7 +97,7 @@ class NotificationsActivity : AppCompatActivity() {
             0
         )
 
-        var builder = NotificationCompat.Builder(this, CHANNEL_ID)
+        val builder = NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_launcher_foreground)
             .setContentTitle("Notification title with action")
             .setContentText("Notification message with action")
@@ -115,7 +115,7 @@ class NotificationsActivity : AppCompatActivity() {
     private fun sendNotificationWithReply() {
 
         val intent = Intent(this, NotificationFromReplyActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
 
         val builder = NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_download)
@@ -129,7 +129,7 @@ class NotificationsActivity : AppCompatActivity() {
 
         val replyIntent = Intent(this, NotificationFromReplyActivity::class.java)
 
-        replyIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        replyIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
 
         val replyPendingIntent =
             PendingIntent.getActivity(
@@ -162,9 +162,9 @@ class NotificationsActivity : AppCompatActivity() {
         val PROGRESS_CURRENT = 0
         builder.setProgress(PROGRESS_MAX, PROGRESS_CURRENT, false)
 
-        var thread = Thread(
+        val thread = Thread(
             Runnable {
-                var porgressCurrent: Int = 0
+                var porgressCurrent = 0
                 while (porgressCurrent <= 100) {
                     Thread.sleep(1000)
                     builder.setProgress(PROGRESS_MAX, porgressCurrent, false)
